@@ -41,9 +41,7 @@ complete mask is 6 layers of 256×256, where each layer is a class label map.
 |Input|Output|
 |:--------:|:--------:|
 ![a](562_final_report_figures/drawings/rgb_shape.png) | ![b](562_final_report_figures/drawings/mask_shape.png)|
-(a) Example of the shape of the RGB representations of images, with shape of 3 channels
-of 5px by 5px (reduced image size for simplicity)| (b) Example of the shape of mask representation
-of images with 6 classes in a 5px by 5px image.|
+(a) Example of the shape of the RGB representations of images, with shape of 3 channels of 5px by 5px (reduced image size for simplicity) | (b) Example of the shape of mask representation of images with 6 classes in a 5px by 5px image.|
 
 During training, images are loaded randomly and transformed randomly with a horizontal and/or
 vertical flip. This is to ensure that the models are not seeing the exact same inputs during successive
@@ -148,7 +146,8 @@ outputs a predicted segmentation map of the original image’s resolution.
 The objective of this project is to train four neural network architectures to semantically segment
 optical images from associated segmentation labels. After training the four networks on the Potsdam
 dataset, we tested the networks to determine the visual accuracy of each network’s output.
-The models were tested on a predetermined set of images not seen during training. 
+The models were tested on a predetermined set of images not seen during training.
+|Input|Output| 
 :-------------------------:|:-------------------------:
 | ![a](562_final_report_figures/images/original.png) | ![b](562_final_report_figures/images/pred_label.png) 
 | Original             | Ground Truth |
