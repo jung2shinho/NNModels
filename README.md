@@ -88,7 +88,6 @@ UNet model is an alteration of the original model by Ronneberger et. al. ”U-Ne
 Networks for Biomedical Image Segmentation” [2].
 
 ### 3.2 ResUNet
-The classifier code can be found at the following link: GitHub.
 ResUNet is structured the same way as UNet, but adds residual blocks and pyramid pooling [2].
 Residual blocks feed both the immediately preceding layer as well as layers from further in the
 past as inputs to the next layer. ResUNet uses this idea to build its residual blocks by summing
@@ -114,7 +113,6 @@ our available hardware was at best able to handle training at a batch size of 2.
 learning would have been prohibitively heavy.
 
 ### 3.3 FastSCNN
-The classifier code can be found at the following link: GitHub.
 FastSCNN describes itself as a ”fast segmentation convolutional neural network.” [5] The highlight
 of the model is a ”learning to downsample module,” which contains 3 layers of convolutions. The
 first convolution is a standard convolution layer and the last two are depth-wise separable convolution
@@ -126,7 +124,6 @@ of the global feature extractor. Finally, the model outputs the classes using a 
 function.
 
 ### 3.4 Efficient Transformer
-The classifier code can be found at the following link: GitHub.
 ![a](562_final_report_figures/images/Efficient-Transformer.png)
 <b>Figure 4</b>. The Efficient Transformer Architecture.
 For the transformer model, we developed a partial implementation of the efficient transformer for
