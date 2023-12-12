@@ -38,11 +38,11 @@ class label is a mapping of whether a pixel corresponds to the label or not. A z
 means the class is not present in a pixel, while a one means the class is present. The shape of the
 complete mask is 6 layers of 256×256, where each layer is a class label map.
 
-|:-------------------------:|:-------------------------:|
-![a](562_final_report_figures/drawings/rgb_shape.png) | ![b](562_final_report_figures/drawings/mask_shape.png)|
-(a) Example of the shape of the RGB representations of images, with shape of 3 channels
+|(a) Example of the shape of the RGB representations of images, with shape of 3 channels
 of 5px by 5px (reduced image size for simplicity)| (b) Example of the shape of mask representation
 of images with 6 classes in a 5px by 5px image.|
+ |:-------------------------:|:-------------------------:|
+![a](562_final_report_figures/drawings/rgb_shape.png) | ![b](562_final_report_figures/drawings/mask_shape.png)|
 
 During training, images are loaded randomly and transformed randomly with a horizontal and/or
 vertical flip. This is to ensure that the models are not seeing the exact same inputs during successive
