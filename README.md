@@ -1,4 +1,4 @@
-# Semantic Segmentation of Digital Aerial Images - Potsdam 
+# Semantic Segmentation of Digital Aerial Images
 
 ## 1. Introduction
 In this project, we implemented four separate neural networks for segmenting optical aerial images
