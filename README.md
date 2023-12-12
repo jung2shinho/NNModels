@@ -200,29 +200,28 @@ comparable performance as with FastSCNN and efficient transformer.
 
 ## 5 Individual Project Contributions
 Code contributions can best be seen on our project GitHub.
-Justin Diamond: Found Efficient Transformer paper and model, found Potsdam dataset from ISPRS,
+<b>Justin Diamond </b>: Found Efficient Transformer paper and model, found Potsdam dataset from ISPRS,
 wrote the report introduction, inserted figures into the report, wrote the efficient transformer
-section and performance results section of the report.
-Nicole Pham: Found ResUNet paper and model, translated ResUNet from mxnet to Pytorch,
+section and performance results section of the report. <br>
+<b>Nicole Pham</b>: Found ResUNet paper and model, translated ResUNet from mxnet to Pytorch,
 found FastSCNN paper and model, wrote the dataloader w/ horizontal and vertical flip transforms,
 wrote the training script, found and used image preprocessing script, trained ResUNet, FastSCNN,
-and Efficient Transformer model, wrote Project Design, ResUNet and FastSCNN sections of report.
-Sean Jung: Found UNet paper and model. Developed and trained our UNet Model. Wrote UNet
+and Efficient Transformer model, wrote Project Design, ResUNet and FastSCNN sections of report.<br>
+<b>Sean Jung</b>: Found UNet paper and model. Developed and trained our UNet Model. Wrote UNet
 architecture section within the report and created the Figure 4 image. Created the slideshow presentation.
 
 ## 6 References
 [1] Dataset: 2013 December 12, International Society for Photogrammetry and Remote Sensing
 (ISPRS) Test Project on Urban Classification, 3D Building Construction and Semantic Labeling,
-https://www
-.isprs.org/education/benchmarks/UrbanSemLab/Default.aspx
+https://www.isprs.org/education/benchmarks/UrbanSemLab/Default.aspx <br>
 [2] Diakogiannis, Foivos I., et al. “ResUNet-A: A deep learning framework for semantic segmentation
 of remotely sensed data.” ISPRS Journal of Photogrammetry and Remote Sensing, vol. 162,
-2020, pp. 94–114, https://doi.org/10.1016/j.isprsjprs.2020.01.013.
+2020, pp. 94–114, https://doi.org/10.1016/j.isprsjprs.2020.01.013. <br>
 [3] Xu, Zhiyong, et al. “Efficient Transformer for remote sensing image segmentation.” Remote
-Sensing, vol. 13, no. 18, 2021, p. 3585, https://doi.org/10.3390/rs13183585.
+Sensing, vol. 13, no. 18, 2021, p. 3585, https://doi.org/10.3390/rs13183585. <br>
 [4] Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. ”U-net: Convolutional networks for
 biomedical image segmentation.” Medical Image Computing and Computer-Assisted Intervention–
 MICCAI 2015: 18th International Conference, Munich, Germany, October 5-9, 2015, Proceedings,
-Part III 18. Springer International Publishing, 2015.
+Part III 18. Springer International Publishing, 2015. <br>
 [5] Poudel, Rudra P K, et al. “Fast-SCNN: Fast Semantic Segmentation Network.” arXiv.Org, 12
-Feb. 2019, arxiv.org/abs/1902.04502.
+Feb. 2019, arxiv.org/abs/1902.04502.<br>
