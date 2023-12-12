@@ -9,6 +9,10 @@ performance with the FastSCNN model performing the best based on our success met
 this report, the following color scheme will be used for the semantic labeling of images: dark
 blue for buildings, light blue for low vegetation, green is for trees, yellow is for cars, and red is for
 background clutter, and white for impervious surfaces.
+
+![a](562_final_report_figures/images/top_potsdam_5_11_RGB.png)
+![b](562_final_report_figures/images/top_potsdam_5_11_label.png)
+
 (a) (b)
 Figure 1. (a) ISPRS Dataset: Example of input aerial image and (b) ground truth segmentation
 label [1]
@@ -33,6 +37,9 @@ by different amounts of red, green, and blue. The pre-processed masks contain 6 
 class label is a mapping of whether a pixel corresponds to the label or not. A zero in the label map
 means the class is not present in a pixel, while a one means the class is present. The shape of the
 complete mask is 6 layers of 256×256, where each layer is a class label map.
+
+![a](562_final_report_figures/drawings/rgb_shape.png)
+![b](562_final_report_figures/images/mask_shape.png)
 (a) (b)
 Figure 2. (a) Example of the shape of the RGB representations of images, with shape of 3 channels
 of 5px by 5px (reduced image size for simplicity) (b) Example of the shape of mask representation
