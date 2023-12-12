@@ -13,7 +13,7 @@ blue for buildings, light blue for low vegetation, green is for trees, yellow is
 background clutter, and white for impervious surfaces.
 
 |Input|Output|
-|:--------:|:---------------:|
+|:--------:|:--------:|
 | ![a](562_final_report_figures/images/top_potsdam_5_11_RGB.png) (a) ISPRS Dataset: Example of input aerial image | ![b](562_final_report_figures/images/top_potsdam_5_11_label.png) (b) Ground Truth Segmentation Label [1] |
 
 
@@ -38,11 +38,12 @@ class label is a mapping of whether a pixel corresponds to the label or not. A z
 means the class is not present in a pixel, while a one means the class is present. The shape of the
 complete mask is 6 layers of 256×256, where each layer is a class label map.
 
-|(a) Example of the shape of the RGB representations of images, with shape of 3 channels
+|Input|Output|
+|:--------:|:--------:|
+![a](562_final_report_figures/drawings/rgb_shape.png) | ![b](562_final_report_figures/drawings/mask_shape.png)|
+(a) Example of the shape of the RGB representations of images, with shape of 3 channels
 of 5px by 5px (reduced image size for simplicity)| (b) Example of the shape of mask representation
 of images with 6 classes in a 5px by 5px image.|
- |:-------------------------:|:-------------------------:|
-![a](562_final_report_figures/drawings/rgb_shape.png) | ![b](562_final_report_figures/drawings/mask_shape.png)|
 
 During training, images are loaded randomly and transformed randomly with a horizontal and/or
 vertical flip. This is to ensure that the models are not seeing the exact same inputs during successive
