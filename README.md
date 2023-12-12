@@ -150,6 +150,8 @@ optical images from associated segmentation labels. After training the four netw
 dataset, we tested the networks to determine the visual accuracy of each network’s output.
 The models were tested on a predetermined set of images not seen during training. 
 
+| Italic             |  Block letters |
+:-------------------------:|:-------------------------:
 | ![a](562_final_report_figures/images/original.png) | ![b](562_final_report_figures/images/pred_label.png) 
 | ![c](562_final_report_figures/images/pred_unet.png) | ![d](562_final_report_figures/images/pred_resunet.png) 
 | ![e](562_final_report_figures/images/pred_fastscnn.png) | ![f](562_final_report_figures/images/pred_transformer.png) | 
