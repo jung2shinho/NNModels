@@ -1,4 +1,4 @@
-# Neural Network Model Project - EE562
+# Semantic Segmentation of Digital Aerial Images - Potsdam 
 
 ## 1. Introduction
 In this project, we implemented four separate neural networks for segmenting optical aerial images
