@@ -1,4 +1,6 @@
-1 Introduction
+# Neural Network Model Project - EE562
+
+## 1. Introduction
 In this project, we implemented four separate neural networks for segmenting optical aerial images
 into the 6 different classes: buildings, low vegetation, trees, cars, background clutter, and
 impervious surfaces (e.g pavement, roads). We trained on 24 high-resolution images of Potsdam,
@@ -16,15 +18,14 @@ background clutter, and white for impervious surfaces.
 (a) (b)
 Figure 1. (a) ISPRS Dataset: Example of input aerial image and (b) ground truth segmentation
 label [1]
-2 Project Design
-2.1 What is Semantic Segmentation?
+## 2. Project Design
+### 2.1 What is Semantic Segmentation?
 Semantic segmentation is the process of classifying individual pixels of an image using multiple
 masking layers. A semantic segmentation model takes an image of varying channels (e.g RGB,
 RGBIR), and returns a bitmap of 0 or 1 to indicate coverage based on trained weights of a neural
 network.
-2
 EE 562 - AI for Engineers Final Project Report
-2.2 The Dataset
+### 2.2 The Dataset
 The dataset we used is optical satellite imagery data of Potsdam, Germany from the International
 Society for Photogrammetry and Remote Sensing (ISPRS) [1]. The original data set is comprised
 of multiple 6000×6000 pixel images and associated semantic segmentation masks. Due to the
@@ -49,9 +50,7 @@ vertical flip. This is to ensure that the models are not seeing the exact same i
 epochs and reduce the possibility of overfitting. The image channels are also normalized to be
 vaguely centered around 0. Given a channel value can be from 0 to 1, by normalizing with a mean
 and standard deviation of 0.5, the channel range changes to -1 to 1.
-3
-EE 562 - AI for Engineers Final Project Report
-2.3 Model Metrics
+### 2.3 Model Metrics
 The metrics that we used to determine how well each model performed are the success metric
 shown in section 4.1 to determine the model’s accuracy, the F1, and the mIoU. The F1 is determined
 by calculating the number of true positives and dividing it by the addition of both the true positives
@@ -59,7 +58,7 @@ and the false positives. In our case, a true positive is when the model correctl
 segmentation label. A false positive is when the model incorrectly classifies a pixel as one of the
 segmentation labels that it is not. The mIoU is determined by calculating the total intersection and
 union between segmentation labels in the predicted output and the image label.
-3 Models
+## 3 Models
 The overall goal of the project is to compare the performance of semantic segmentation models;
 however, there are numerous models that tackle semantic segmentation. To narrow down which
 models to use, we searched for models that had been used for the specific task of semantically
@@ -67,13 +66,12 @@ segmenting the same type of data we are using - aerial image data. Then, we sele
 models to compare their results. The final spread of models to compare consists of a deep learning
 CNN (UNet), a deep learning CNN with residual blocks (ResUNet), an efficient CNN (FastSCNN),
 and a transformer model (Efficient Transformer).
-3.1 UNet
+### 3.1 UNet
 
 ![a](562_final_report_figures/images/unet.png)
 
 Figure 3. UNet Architecture: Batch size of 16.
-4
-EE 562 - AI for Engineers Final Project Report
+
 This neural network consists of a contracting and expansive path, utilizing a series of convolutions,
 max pooling, and up-sampling processes for the input images. In the contracting path, 3×3 pixel
 convolutions with a padding of 1 were initiated, followed by a rectified linear unit (ReLU) activation
@@ -85,7 +83,8 @@ corresponding feature map from the contracting path to prevent excessive informa
 the final layer, a 1×1 convolution is utilized to map features into the desired 6 class features. This
 UNet model is an alteration of the original model by Ronneberger et. al. ”U-Net: Convolutional
 Networks for Biomedical Image Segmentation” [2].
-3.2 ResUNet
+
+### 3.2 ResUNet
 The classifier code can be found at the following link: GitHub.
 ResUNet is structured the same way as UNet, but adds residual blocks and pyramid pooling [2].
 Residual blocks feed both the immediately preceding layer as well as layers from further in the
@@ -110,9 +109,8 @@ of multitask learning, whereas ResUNet is single task learning. This choice was 
 to time and hardware constraints. Due to the amount of weights in the basic ResUNet architecture,
 our available hardware was at best able to handle training at a batch size of 2. Adding multitask
 learning would have been prohibitively heavy.
-5
-EE 562 - AI for Engineers Final Project Report
-3.3 FastSCNN
+
+### 3.3 FastSCNN
 The classifier code can be found at the following link: GitHub.
 FastSCNN describes itself as a ”fast segmentation convolutional neural network.” [5] The highlight
 of the model is a ”learning to downsample module,” which contains 3 layers of convolutions. The
@@ -124,7 +122,7 @@ skip connection sums the original output of the learning to downsample module an
 of the global feature extractor. Finally, the model outputs the classes using a softmax activation
 function.
 
-3.4 Efficient Transformer
+### 3.4 Efficient Transformer
 The classifier code can be found at the following link: GitHub.
 ![a](562_final_report_figures/images/Efficient-Transformer.png)
 Figure 4. The Efficient Transformer Architecture.
@@ -135,8 +133,7 @@ edge enhancement heads to remedy the main shortcomings of the Swin Transfomer. O
 includes the Swin transformer (SwinT) with a pure segmentation Multilayer Perceptron (MLP)
 head and fully convolutional network (FCN) auxiliary head. Our implementation does not include
 the implicit or explicit edge enhancement head.
-6
-EE 562 - AI for Engineers Final Project Report
+
 Typically, semantic segmentation models consist of both a backbone and a segmentation head. The
 backbone of the efficient transformer is composed of a patch partitioning module, followed by four
 successive cascade stages. The first cascade stage consists of a position embedding module and
@@ -147,7 +144,8 @@ This makes the Efficient Transformer much more efficient than the Swin Transform
 The MLP head is used to fuse the different scale features obtained by the efficient transformer after
 each successive cascading block. After fusing the low-dimensional feature maps, the MLP head
 outputs a predicted segmentation map of the original image’s resolution.
-4 Performance Results
+
+## 4 Performance Results
 The objective of this project is to train four neural network architectures to semantically segment
 optical images from associated segmentation labels. After training the four networks on the Potsdam
 dataset, we tested the networks to determine the visual accuracy of each network’s output.
@@ -161,7 +159,8 @@ The models were tested on a predetermined set of images not seen during training
 ![f](562_final_report_figures/images/pred_transformer.png)
 
 Figure 5 shows each network’s segmentation output from an associated test image.
-4.1 Success Metric
+
+### 4.1 Success Metric
 For the success metric, we utilized a pixel accuracy function that can be found at the following
 link: GitHub. This function determines the total number of tensor indices that correctly identified
 the segmentation class that is represented at that index. Then, it divides the number of correctly
@@ -169,21 +168,16 @@ labeled tensor indices by the size of the image to obtain the model’s accuracy
 4.2 Segmentation Results
 Each model was tested on a set of validation images to determine the model’s visual accuracy.
 Predicted segmentation labels for the same input image are shown in Figure 5.
-7
-EE 562 - AI for Engineers Final Project Report
-(a) (b)
-(c) (d)
-(e) (f)
 Figure 5. (a) Optical satellite image, (b) ground truth semantic segmentation label, and segmentation
 labels generated by the (c) UNet, (d) ResUNet, (e) FastSCNN, and the (f) Efficient Transformer.
-8
-EE 562 - AI for Engineers Final Project Report
+
 Table 1. Comparison of results for the four semantic segmentation models
 Model Batch Size Epoch Accuracy F1 mIoU
 UNet 16 1 0.563668 0.374492 0.267580
 ResUNet 3 1 0.716808 0.446289 0.353755
 FastSCNN 32 10 0.855029 0.853172 0.750244
 Efficient Transformer 16 10 0.845004 0.748022 0.619644
+
 From the metrics shown in Table 1, it is clear that the FastSCNN model performs best in all three
 major categories: accuracy, F1, and mIoU. The poorest performing models were the UNet and the
 ResUNet, which can be seen visually in the output images. Primarily, this is due to compute resource
@@ -202,9 +196,8 @@ Due to the high computational expense of training UNet and ResUnet, these two mo
 trained for 1 epoch only. (Resulted Training Time for one epoch: 13+ hr Using GPU TPU1000
 NVIDIA). Given more time for training and fine-tuning, the Unet and ResUNet models may have
 comparable performance as with FastSCNN and efficient transformer.
-9
-EE 562 - AI for Engineers Final Project Report
-5 Individual Project Contributions
+
+## 5 Individual Project Contributions
 Code contributions can best be seen on our project GitHub.
 Justin Diamond: Found Efficient Transformer paper and model, found Potsdam dataset from ISPRS,
 wrote the report introduction, inserted figures into the report, wrote the efficient transformer
@@ -215,7 +208,8 @@ wrote the training script, found and used image preprocessing script, trained Re
 and Efficient Transformer model, wrote Project Design, ResUNet and FastSCNN sections of report.
 Sean Jung: Found UNet paper and model. Developed and trained our UNet Model. Wrote UNet
 architecture section within the report and created the Figure 4 image. Created the slideshow presentation.
-6 References
+
+## 6 References
 [1] Dataset: 2013 December 12, International Society for Photogrammetry and Remote Sensing
 (ISPRS) Test Project on Urban Classification, 3D Building Construction and Semantic Labeling,
 https://www
