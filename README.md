@@ -67,7 +67,6 @@ models to compare their results. The final spread of models to compare consists 
 CNN (UNet), a deep learning CNN with residual blocks (ResUNet), an efficient CNN (FastSCNN),
 and a transformer model (Efficient Transformer).
 ### 3.1 UNet
-
 ![a](562_final_report_figures/images/unet.png)
 
 Figure 3. UNet Architecture: Batch size of 16.
@@ -151,12 +150,13 @@ optical images from associated segmentation labels. After training the four netw
 dataset, we tested the networks to determine the visual accuracy of each network’s output.
 The models were tested on a predetermined set of images not seen during training. 
 
-![a](562_final_report_figures/images/original.png)
-![b](562_final_report_figures/images/pred_label.png)
-![c](562_final_report_figures/images/pred_unet.png)
-![d](562_final_report_figures/images/pred_resunet.png)
-![e](562_final_report_figures/images/pred_fastscnn.png)
-![f](562_final_report_figures/images/pred_transformer.png)
+| --- | --- |
+| ![a](562_final_report_figures/images/original.png) | ![b](562_final_report_figures/images/pred_label.png)|
+| a | b |
+| ![c](562_final_report_figures/images/pred_unet.png) | ![d](562_final_report_figures/images/pred_resunet.png) | 
+| c | d |
+| ![e](562_final_report_figures/images/pred_fastscnn.png) | ![f](562_final_report_figures/images/pred_transformer.png) | 
+| e | f |
 
 Figure 5 shows each network’s segmentation output from an associated test image.
 
