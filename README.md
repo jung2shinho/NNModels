@@ -15,6 +15,7 @@ background clutter, and white for impervious surfaces.
 |Input|Output|
 |:--------:|:--------:|
 | ![a](562_final_report_figures/images/top_potsdam_5_11_RGB.png) | ![b](562_final_report_figures/images/top_potsdam_5_11_label.png) |
+|(a)|(b)|
 
 <b> Figure 1</b>. (a) ISPRS Dataset: Example of input aerial image (b) Ground Truth Segmentation Label [1] 
 
